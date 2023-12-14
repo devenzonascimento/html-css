@@ -117,10 +117,14 @@ strong {
     color: #1A5C38;
 }
 
-.imagem {
+.imagens {
     display: block;
     text-align: center;
     margin: auto;
+}
+
+.imagem {
+    width: 90%;
 }
 
 div.video {
