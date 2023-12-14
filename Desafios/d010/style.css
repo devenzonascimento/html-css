@@ -123,8 +123,9 @@ strong {
     margin: auto;
 }
 
-.imagem {
-    width: 90%;
+.imagempq {
+    min-width: 250px;
+    max-width: 350px;
 }
 
 div.video {
