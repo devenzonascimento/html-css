@@ -28,27 +28,6 @@
     font-style: normal;
 }
 
-#a1 {
-    font-family: 'Figtree'; /* Padrão (Regular) */
-}
-
-#b2 {
-    font-family: 'Figtree';
-    font-weight: bold; /* Extra Bold */
-}
-
-#c3 {
-    font-family: 'Figtree';
-    font-style: italic; /* Itálico */
-}
-
-#d4 {
-    font-family: 'Figtree';
-    font-weight: 600; /* Semi Bold */
-    font-style: normal;
-}
-
-
 body {
     height: 100vh;
     display: flex;
@@ -62,7 +41,6 @@ body {
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 450px;
     width: 325px;
     padding: 20px;
@@ -73,6 +51,7 @@ body {
 }
 
 .image {
+    max-width: 100%;
     border-radius: 10px;
 }
 
