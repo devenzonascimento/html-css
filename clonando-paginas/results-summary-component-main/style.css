@@ -198,8 +198,8 @@ button:hover {
         text-align: center;
         background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
         border-radius: 0;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
         color: rgba(255, 255, 255, 0.562);
     }
     
