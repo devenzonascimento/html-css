@@ -66,26 +66,70 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    border: 1px solid black;
 }
 
 .info-container > h1 {
     font-size: 0.8em;
     font-weight: 500;
     letter-spacing: 5px;
-    color: hsl(228, 12%, 48%);
+    color: var(--Dark-grayish-blue);
 }
 
 .info-container > h2 {
-    font-family: 'Fraunices';
+    font-family: 'Fraunices' serif;
     font-size: 2.5em;
     font-weight: 800;
+    color: var(--Very-dark-blue);
     line-height: 1;
     
 }
 
 .info-container > p {
-    color: hsl(228, 12%, 48%);
+    color: var(--Dark-grayish-blue);
+}
+
+.info-container > .values {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.values > .price {
+    font-family: "Fraunices" serif;
+    font-size: 2.5em;
+    color: var(--Dark-cyan);
+}
+
+.values > .discount {
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+.info-container > button {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--Dark-cyan);
+    color: white;
+    
+}
+
+button:hover {
+    background-color: hsl(159, 46%, 20%);
+}
+
+button > span {
+    margin-left: 20px;
+    font-size: 1.1em;
+}
+
+.attribution {
+    margin-top: 20px;
 }
 
 /*
@@ -93,6 +137,145 @@ font-family: 'Fraunices', serf;
 font-family: 'Montserrat', sans-serif;
 */
 
-@media only screen and (max-width: 375px) {
-    
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+
+    * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    :root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    }
+
+    body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--Cream);
+    }
+
+    .wrapper {
+    height: 600px;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 100px;
+    }
+
+    .img-card {
+    height: 40%;
+    width: 100%;
+
+    }
+
+    .img-card > img {
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    }
+
+    .info-card {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    background-color: white;
+    }
+
+    .info-container {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    }
+
+    .info-container > h1 {
+    font-size: 0.8em;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: var(--Dark-grayish-blue);
+    }
+
+    .info-container > h2 {
+    font-family: 'Fraunices' serif;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--Very-dark-blue);
+    line-height: 1;
+
+    }
+
+    .info-container > p {
+    color: var(--Dark-grayish-blue);
+    }
+
+    .info-container > .values {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .values > .price {
+    font-family: "Fraunices" serif;
+    font-size: 2.5em;
+    color: var(--Dark-cyan);
+    }
+
+    .values > .discount {
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+    }
+
+    .info-container > button {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--Dark-cyan);
+    color: white;
+
+    }
+
+    button:hover {
+    background-color: hsl(159, 46%, 20%);
+    }
+
+    button > span {
+    margin-left: 20px;
+    font-size: 1.1em;
+    }
+
+    .attribution {
+    margin-top: 20px;
+    }   
 }
