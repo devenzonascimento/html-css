@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            width: 0;
+            height: 0;
+            background-color: lightgray;
+            overflow: hidden;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .show-login {
+            width: 300px;
+            height: 150px;
+        }
+
+        .trigger-button {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="trigger-button" onclick="toggleLogin()">Clique</div>
+    <div class="login-container" id="loginContainer">Tela de Login</div>
+
+    <script>
+        function toggleLogin() {
+            const loginContainer = document.getElementById('loginContainer');
+
+            loginContainer.classList.toggle('show-login');
+        }
+    </script>
+</body>
+</html>

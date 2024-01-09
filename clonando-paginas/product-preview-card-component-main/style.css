@@ -86,6 +86,7 @@ body {
 
 .info-container > p {
     color: var(--Dark-grayish-blue);
+    line-height: 1.5em;
 }
 
 .info-container > .values {
@@ -126,6 +127,7 @@ button:hover {
 button > span {
     margin-left: 20px;
     font-size: 1.1em;
+    font-weight: 600;
 }
 
 .attribution {
@@ -169,19 +171,17 @@ font-family: 'Montserrat', sans-serif;
     }
 
     .wrapper {
-    height: 600px;
+    height: 650px;
     width: 375px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    border: 1px solid black;
-    margin: 100px;
     }
 
     .img-card {
-    height: 40%;
+    height: 250px;
     width: 100%;
 
     }
@@ -195,7 +195,7 @@ font-family: 'Montserrat', sans-serif;
     }
 
     .info-card {
-    height: 60%;
+    height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -208,7 +208,7 @@ font-family: 'Montserrat', sans-serif;
 
     .info-container {
     height: 100%;
-    width: 80%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -224,7 +224,7 @@ font-family: 'Montserrat', sans-serif;
 
     .info-container > h2 {
     font-family: 'Fraunices' serif;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 800;
     color: var(--Very-dark-blue);
     line-height: 1;
@@ -236,7 +236,7 @@ font-family: 'Montserrat', sans-serif;
     }
 
     .info-container > .values {
-    width: 85%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -276,6 +276,6 @@ font-family: 'Montserrat', sans-serif;
     }
 
     .attribution {
-    margin-top: 20px;
+    margin-top: 15px;
     }   
 }
