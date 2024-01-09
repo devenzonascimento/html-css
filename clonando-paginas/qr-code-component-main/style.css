@@ -26,18 +26,17 @@ body {
 
 .wrapper-out {
     height: 600px;
-    width: 375px;
+    width: 355px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
 }
 
 .wrapper {
-    height: 600px;
-    width: 375px;
+    height: 580px;
+    width: 335px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -68,4 +67,16 @@ body {
 
 .attribution {
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+body {
+    justify-content: flex-start;
+}
+
+.wrapper-out {
+    margin-top: 20px;
+}
+
 }
