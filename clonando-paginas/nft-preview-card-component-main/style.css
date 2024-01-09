@@ -42,48 +42,45 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     background-color: transparent;
-    border: 1px solid black;
 }
-
-
-
-
 
 .img-container {
-    width: 100%;
-    height: min-content;
-    border: 1px solid red;
+    position: relative;
 }
-.img-container image {
+
+.img-container .image {
     width: 100%;
+    border-radius: 10px;
 }
+
 .img-container .icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 1; 
+    opacity: 0; 
     transition: opacity 0.3s ease-in-out;
 }
-.img-container:hover image {
-    filter: brightness(80%); 
-}
+
 .img-container:hover .icon {
     opacity: 1; 
 }
 
-
-
-
-
-
-
-
-
-.img-container > .image {
+.img-container .filter-green {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
+    height: 100%;
     border-radius: 10px;
-    border: 1px solid white;
+    transform: translate(-50%, -50%);
+    background-color: var(--Cyan);
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+}
+
+.img-container:hover .filter-green {
+    opacity: 0.5;
 }
 
 .wrapper > h1 {
