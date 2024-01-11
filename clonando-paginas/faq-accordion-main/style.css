@@ -25,7 +25,7 @@ p {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,11 +38,13 @@ body {
 .container {
     max-height: max-content;
     min-height: min-content;
-    width: 600px;
+    max-width: 600px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    margin: 15px;
     padding: 30px;
     background-color: white;
     border-radius: 20px;
@@ -75,6 +77,11 @@ body {
     font-weight: 600;
 }
 
+.subtitulo h2:hover {
+    cursor: pointer;
+    color: rgb(221, 3, 221);
+}
+
 .subtitulo .plus {
     cursor: pointer;
 }
@@ -85,6 +92,16 @@ body {
     opacity: 0;
     overflow: hidden;
     transition: max-height 1s ease, opacity 0.5s ease;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.247);
+}
+
+footer {
+    margin-top: 20px;
 }
 
 

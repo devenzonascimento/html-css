@@ -10,9 +10,11 @@ plusButtons.forEach(button => {
       if (button.classList.contains("active")) {
         paragraph.style.maxHeight = "100px";
         paragraph.style.opacity = "1";
+        button.setAttribute("src", "assets/images/icon-minus.svg")
       } else {
         paragraph.style.maxHeight = "0";
         paragraph.style.opacity = "0";
+        button.setAttribute("src", "assets/images/icon-plus.svg")
       }
     });
   });
