@@ -74,7 +74,7 @@ const Ram = () => {
   return (
     <>
       <div className="ram-container">
-        <caption className="ram-caption">RAM</caption>
+        <caption className="ram-caption">MEMÓRIA RAM</caption>
         <table className="ram-table">
           <tr className="ram-table-header">
             <th>Endereço</th>
