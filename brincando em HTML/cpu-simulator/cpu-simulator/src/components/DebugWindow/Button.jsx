@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { stepButton } from '.';
+//import { stepButton } from '.';
 
 const Button = () => {
     return (
         <>
-            <button onClick={stepButton}>STEP</button>
+            <button id='button' className='button'>STEP</button>
         </>
     );
 }
