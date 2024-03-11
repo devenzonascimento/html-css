@@ -2,6 +2,8 @@ import React from "react";
 
 import DecodeRow from "./DecodeRow";
 
+import "./styles.scss";
+
 const DecodeUnit = () => {
   const decodeTableRow = [
     {
@@ -32,17 +34,17 @@ const DecodeUnit = () => {
     {
       opcode: "0110",
       operand: "adress",
-      instruction: "Branch Always",
+      instruction: "Always",
     },
     {
       opcode: "0111",
       operand: "adress",
-      instruction: "Branch if ACC = 0",
+      instruction: "if ACC = 0",
     },
     {
       opcode: "1000",
       operand: "adress",
-      instruction: "Branch if ACC >= 0",
+      instruction: "if ACC >= 0",
     },
     {
       opcode: "1001",
@@ -59,17 +61,20 @@ const DecodeUnit = () => {
   return (
     <>
       <div className="decode-container">
-        <caption className="decode-caption">DECODIFICADOR</caption>
         <table className="decode-table">
-          <tr className="decode-table-header">
-            <th>Codigo OP.</th>
-            <th>Operando</th>
-            <th>Instrução</th>
-          </tr>
-
-          {decodeTableRow.map((row) => (
-            <DecodeRow decodeTableRow={row} />
-          ))}
+        <caption className="decode-caption">DECODIFICADOR</caption>
+          <thead>
+            <tr className="decode-table-header">
+              <th>Codigo OP.</th>
+              <th>Operando</th>
+              <th>Instrução</th>
+            </tr>
+          </thead>
+          <tbody>
+            {decodeTableRow.map((row) => (
+              <DecodeRow key={row.instruction} decodeTableRow={row} />
+            ))}
+          </tbody>
         </table>
       </div>
     </>

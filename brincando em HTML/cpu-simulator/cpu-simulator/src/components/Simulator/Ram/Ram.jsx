@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import RamRow from "./RamRow";
 
-import "../../styles/Ram.scss";
+import "./styles.scss";
 
 const Ram = () => {
-  const [ramTableRow, setRamTableRow] = useState([
+  const ramTableRow = [
     {
       adress: "00000000",
       value: "00000000",
@@ -69,21 +69,24 @@ const Ram = () => {
       adress: "00001111",
       value: "00000000",
     },
-  ]);
+  ];
 
   return (
     <>
       <div className="ram-container">
-        <caption className="ram-caption">MEMÓRIA RAM</caption>
         <table className="ram-table">
-          <tr className="ram-table-header">
-            <th>Endereço</th>
-            <th>Dado</th>
-          </tr>
-
-          {ramTableRow.map((row) => (
-            <RamRow ramTableRow={row} />
-          ))}
+        <caption className="ram-caption">MEMÓRIA RAM</caption>
+          <thead>
+            <tr>
+              <th>Endereço</th>
+              <th>Dado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ramTableRow.map((row) => (
+              <RamRow key={row.adress} ramTableRow={row} />
+            ))}
+          </tbody>
         </table>
       </div>
     </>

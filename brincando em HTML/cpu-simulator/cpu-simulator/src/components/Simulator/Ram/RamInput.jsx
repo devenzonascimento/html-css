@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const RamValue = ({ ramValue }) => {
+const RamInput = ({ ramValue }) => {
     
   const [inputValue, setInputValue] = useState(ramValue);
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setInputValue(event.target.value = event.target.value.replace(/[^0-9]/g, ''));
   };
 
   return (
@@ -16,11 +16,10 @@ const RamValue = ({ ramValue }) => {
         type="text"
         value={inputValue}
         onChange={handleInputChange}
-        //onKeyDown={console.log("click")}
       />
     </td>
   );
 };
 
-export default RamValue;
+export default RamInput;
 
