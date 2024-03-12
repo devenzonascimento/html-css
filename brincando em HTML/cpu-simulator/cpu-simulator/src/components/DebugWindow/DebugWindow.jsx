@@ -2,10 +2,10 @@ import React from 'react';
 
 import Button from './Button';
 
-const DubugWindow = () => {
+const DubugWindow = ({executeNextStep}) => {
     return (
         <div className="debug-container">
-            <Button />
+            <Button executeNextStep={executeNextStep}/>
         </div>
     );
 }

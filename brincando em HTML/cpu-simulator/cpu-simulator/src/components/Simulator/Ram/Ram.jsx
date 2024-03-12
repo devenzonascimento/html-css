@@ -1,78 +1,24 @@
 import React, { useState } from "react";
-import RamRow from "./RamRow";
+import Row from "./Row";
 
 import "./styles.scss";
 
-const Ram = () => {
-  const ramTableRow = [
-    {
-      adress: "00000000",
-      value: "00000000",
-    },
-    {
-      adress: "00000001",
-      value: "00000000",
-    },
-    {
-      adress: "00000010",
-      value: "00000000",
-    },
-    {
-      adress: "00000011",
-      value: "00000000",
-    },
-    {
-      adress: "00000100",
-      value: "00000000",
-    },
-    {
-      adress: "00000101",
-      value: "00000000",
-    },
-    {
-      adress: "00000110",
-      value: "00000000",
-    },
-    {
-      adress: "00000111",
-      value: "00000000",
-    },
-    {
-      adress: "00001000",
-      value: "00000000",
-    },
-    {
-      adress: "00001001",
-      value: "00000000",
-    },
-    {
-      adress: "00001010",
-      value: "00000000",
-    },
-    {
-      adress: "00001011",
-      value: "00000000",
-    },
-    {
-      adress: "00001100",
-      value: "00000000",
-    },
-    {
-      adress: "00001101",
-      value: "00000000",
-    },
-    {
-      adress: "00001110",
-      value: "00000000",
-    },
-    {
-      adress: "00001111",
-      value: "00000000",
-    },
-  ];
+const Ram = ({ memory, onAtualizarMemory }) => {
+
+  const [memoryEditavel, setMemoryEditavel] = useState({ ...memory });
+
+  const handleEditar = (endereco, novoValor) => {
+    const novaMemory = { ...memoryEditavel };
+    novaMemory[endereco] = novoValor;
+
+    //console.log(novaMemory)
+    //console.log(memoryEditavel)
+
+    setMemoryEditavel(novaMemory);
+    onAtualizarMemory({ ...memoryEditavel });
+  };
 
   return (
-    <>
       <div className="ram-container">
         <table className="ram-table">
         <caption className="ram-caption">MEMÓRIA RAM</caption>
@@ -83,13 +29,10 @@ const Ram = () => {
             </tr>
           </thead>
           <tbody>
-            {ramTableRow.map((row) => (
-              <RamRow key={row.adress} ramTableRow={row} />
-            ))}
+              <Row memoryEditavel={memoryEditavel} handleEditar={handleEditar}/>
           </tbody>
         </table>
       </div>
-    </>
   );
 };
 

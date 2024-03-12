@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 
-const Input = ({ name }) => {
+const Input = ({ name, value, updateValue }) => {
     
-  const [inputValue, setInputValue] = useState("00000000");
+  const [inputValue, setInputValue] = useState(value);
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value = event.target.value.replace(/[^0-9]/g, ''));
+    let newInputValue = event.target.value
+    setInputValue(newInputValue = newInputValue.replace(/[^0-9]/g, ''));
+    updateValue(newInputValue)
   };
 
   return (
       <input
-        id={name}
-        //className={`${name}-input`}
+        className={`${name}-input`}
         maxLength={8}
         type="text"
         value={inputValue}

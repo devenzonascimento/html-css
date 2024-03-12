@@ -1,11 +1,9 @@
 import React from 'react';
 
-//import { stepButton } from '.';
-
-const Button = () => {
+const Button = ({executeNextStep}) => {
     return (
         <>
-            <button id='button' className='button'>STEP</button>
+            <button id='step' className='button' onClick={executeNextStep}>STEP</button>
         </>
     );
 }
