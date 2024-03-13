@@ -40,29 +40,20 @@ const App = () => {
     setMemoryValue({ ...newMemory });
   };
 
-  useEffect(() => {
-    console.log("EXECUTOU EFFECT")
+
+
+  const updateAllRegisters = () => {
     setPcValue(pc);
     setMarValue(mar);
     setMdrValue(mdr);
     setAccValue(acc);
     setCirValue(cir);
-    setMemoryValue({ ...memory });
-
-  }, [pc, mar, mdr, acc, cir, memory]);
-
-  const updateAllRegisters = () => {
-    setPcValue("55555");
-    setMarValue(mar);
-    setMdrValue(mdr);
-    setAccValue(acc);
-    setCirValue(cir);
-    setMemoryValue(memory)
-    console.log(`att: ${pcValue}`);
-    console.log(`att: ${marValue}`);
-    console.log(`att: ${mdrValue}`);
-    console.log(`att: ${accValue}`);
-    console.log(`att: ${cirValue}`);
+    setMemoryValue({...memory})
+    // console.log(`att: ${pcValue}`);
+    // console.log(`att: ${marValue}`);
+    // console.log(`att: ${mdrValue}`);
+    // console.log(`att: ${accValue}`);
+    // console.log(`att: ${cirValue}`);
   }
 
   const executeNextStep = () => {
@@ -70,11 +61,12 @@ const App = () => {
       console.log(main[currentStep])
       main[currentStep]();
       setcurrentStep((prev) => prev + 1)
-      console.log(`att: ${pcValue}`);
-      console.log(`att: ${marValue}`);
-      console.log(`att: ${mdrValue}`);
-      console.log(`att: ${accValue}`);
-      console.log(`att: ${cirValue}`);
+      updateAllRegisters()
+      // console.log(`att: ${pcValue}`);
+      // console.log(`att: ${marValue}`);
+      // console.log(`att: ${mdrValue}`);
+      // console.log(`att: ${accValue}`);
+      // console.log(`att: ${cirValue}`);
     }
   };
 
@@ -86,6 +78,16 @@ const App = () => {
         <div className="simulator-container">
           <Ram memory={memoryValue} onAtualizarMemory={handleUpdateMemory} />
           <div className="registers-container">
+          {/*
+          <p>PC: {pcValue}</p>
+          <p>MAR: {marValue}</p>
+          <p>MDR: {mdrValue}</p>
+          <p>ACC: {accValue}</p>
+          <p>CIR: {cirValue}</p>
+          {Object.entries(memory).map((row) => (
+            <pre>{row}</pre>
+          ))}
+          */}
             <Register
               name={"pc"}
               value={pcValue}

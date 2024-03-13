@@ -15,7 +15,7 @@ const Input = ({ name, value, updateValue }) => {
         className={`${name}-input`}
         maxLength={8}
         type="text"
-        value={inputValue}
+        value={value}
         onChange={handleInputChange}
       />
   );
