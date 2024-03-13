@@ -1,0 +1,17 @@
+.debug-container {
+    width: 100%;
+    padding: 1em 2em;
+    color: lime;
+    background-color: rgb(22, 22, 22);
+    border: 2px solid lime;
+    border-radius: 10px;
+
+    .step-button {
+        height: 50px;
+        width: 50px;
+        color: lime;
+        background-color: rgb(22, 22, 22);
+        border: 1px solid lime;
+        border-radius: 50%;
+    }
+}

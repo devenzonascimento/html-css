@@ -33,23 +33,12 @@ const App = () => {
   } 
 
   return (
-    <>
       <div className="container">
         <Settings />
         <DebugWindow updateValues={updateValues} executeNextStep={Cpu.executeNextStep} />
         <div className="simulator-container">
           <Ram memory={memoryValue} onAtualizarMemory={handleUpdateMemory} />
           <div className="registers-container">
-          {/*
-          <p>PC: {pcValue}</p>
-          <p>MAR: {marValue}</p>
-          <p>MDR: {mdrValue}</p>
-          <p>ACC: {accValue}</p>
-          <p>CIR: {cirValue}</p>
-          {Object.entries(memory).map((row) => (
-            <pre>{row}</pre>
-          ))}
-          */}
             <Register
               name={"pc"}
               value={pcValue}
@@ -77,7 +66,6 @@ const App = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

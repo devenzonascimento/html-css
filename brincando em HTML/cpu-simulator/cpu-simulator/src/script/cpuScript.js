@@ -28,7 +28,7 @@ export let operand = "";
 
 export const executeNextStep = () => {
     if (currentStep < main.length) {
-        console.log(main[currentStep])
+        //console.log(main[currentStep])
         main[currentStep]();
         currentStep++
     }
@@ -110,7 +110,7 @@ export const inputInstruction = [
 ];
 
 export const outputInstruction = [
-    () => alert(acc),
+    () => alert(toDecimal(acc)),
     () => instructionExecute(search),
 ];
 
