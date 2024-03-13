@@ -1,22 +1,26 @@
 .decode-container {
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 1em;
     padding: 1em;
-    color: black;
-    background-color: rgb(218, 218, 218);
-    border: 2px solid rgb(0, 0, 0);
+    color: lime;
+    background-color: rgb(22, 22, 22);
+    border: 2px solid lime;
     border-radius: 15px;
 
     .decode-caption {
         font-size: 2em;
         font-weight: 700;
     }
-
+    
     .decode-table {
         border-collapse: collapse;
         
+        & tr:nth-child(even) {
+            background-color: rgb(40, 40, 40);
+        }
     
         & th, td {
             width: 3em;
@@ -24,21 +28,7 @@
             padding: 0.2em;
             text-align: start;
             text-transform: uppercase;
-            border: 2px solid black;
-        }
-        & td {
-            font-family: "Kode Mono", monospace;
-            letter-spacing: 0.1em;
-
-            &:hover {
-                color: lime;
-                background-color: rgb(22, 22, 22);
-            }
-
-
-        }
-        & tr:nth-child(even) {
-            background-color: rgb(185, 185, 185);
+            border: 2px solid rgb(94, 94, 94);
         }
     }
 }

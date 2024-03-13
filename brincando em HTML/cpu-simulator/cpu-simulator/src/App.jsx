@@ -11,57 +11,36 @@ import Register from "./components/Simulator/Registers/Register";
 const App = () => {
   
   const [memoryValue, setMemoryValue] = useState(memory);
-  
   const [pcValue, setPcValue] = useState("00000000");
   const [marValue, setMarValue] = useState("00000000");
   const [mdrValue, setMdrValue] = useState("00000000");
   const [accValue, setAccValue] = useState("00000000");
   const [cirValue, setCirValue] = useState("00000000");
-  const [currentStep, setcurrentStep] = useState(0);
-  
 
-  const handleUpdatePc = (newValue) => {
-    setPcValue(newValue);
-  };
-  const handleUpdateMar = (newValue) => {
-    setMarValue(newValue);
-  };
-  const handleUpdateMdr = (newValue) => {
-    setMdrValue(newValue);
-  };
-  const handleUpdateAcc = (newValue) => {
-    setAccValue(newValue);
-  };
-  const handleUpdateCir = (newValue) => {
-    setCirValue(newValue);
-  };
+  const [currentStep, setcurrentStep] = useState(0);
 
   const handleUpdateMemory = (newMemory) => {
     setMemoryValue({ ...newMemory });
+    memory = newMemory
   };
 
-
-
-  const updateAllRegisters = () => {
+  useEffect(() => {
     setPcValue(pc);
     setMarValue(mar);
     setMdrValue(mdr);
     setAccValue(acc);
     setCirValue(cir);
-    setMemoryValue({...memory})
-    // console.log(`att: ${pcValue}`);
-    // console.log(`att: ${marValue}`);
-    // console.log(`att: ${mdrValue}`);
-    // console.log(`att: ${accValue}`);
-    // console.log(`att: ${cirValue}`);
-  }
+    setMemoryValue(memory);
+
+  }, [pc, mar, mdr, acc, cir, memory]);
 
   const executeNextStep = () => {
     if (currentStep < main.length) {
-      console.log(main[currentStep])
+      //console.log(main[currentStep])
       main[currentStep]();
       setcurrentStep((prev) => prev + 1)
-      updateAllRegisters()
+      // console.log(memoryValue);
+      // console.log(memory);
       // console.log(`att: ${pcValue}`);
       // console.log(`att: ${marValue}`);
       // console.log(`att: ${mdrValue}`);
@@ -91,30 +70,25 @@ const App = () => {
             <Register
               name={"pc"}
               value={pcValue}
-              updateValue={handleUpdatePc}
             />
             <Register
               name={"mar"}
               value={marValue}
-              updateValue={handleUpdateMar}
             />
+              <Register
+                name={"mdr"}
+                value={mdrValue}
+              />
+              <Alu />
             <Register
               name={"acc"}
               value={accValue}
-              updateValue={handleUpdateAcc}
-            />
-            <Alu />
-            <Register
-              name={"mdr"}
-              value={mdrValue}
-              updateValue={handleUpdateMdr}
             />
           </div>
           <div className="decode-cir-container">
             <Register
               name={"cir"}
               value={cirValue}
-              updateValue={handleUpdateCir}
             />
             <DecodeUnit />
           </div>
@@ -144,11 +118,11 @@ let memory = {
   "00001110": "00000000",
   "00001111": "00000000",
 }
-let pc = 0
-let mar = 0
-let mdr = 0
-let acc = 0
-let cir = 0
+let pc = "00000000"
+let mar = "00000000"
+let mdr = "00000000"
+let acc = "00000000"
+let cir = "00000000"
 let contador = 0;
 let opcode = "";
 let operand = "";
@@ -229,7 +203,7 @@ const inputInstruction = [
 ];
 
 const outputInstruction = [
-  () => alert(acc),
+  () => alert(toDecimal(acc)),
   () => instructionExecute(search),
 ];
 
@@ -239,6 +213,3 @@ function toBinary(num) {
 function toDecimal(num) {
   return parseInt(num, 2);
 }
-
-
-// DE ACORDO COM MEUS TESTES OS STATES ESTÃO SENDO ATUALIZADOS, POREM OS COMPONENTES NÃO ESTÃO RECEBENDO OS VALORES

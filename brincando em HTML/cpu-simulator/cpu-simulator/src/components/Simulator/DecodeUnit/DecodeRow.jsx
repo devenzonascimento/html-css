@@ -3,7 +3,7 @@ import React from 'react';
 const DecodeRow = ({decodeTableRow}) => {
     return (
         <>
-        <tr>
+        <tr key={decodeTableRow.instruction}>
             <td>{decodeTableRow.opcode}</td>
             <td>{decodeTableRow.operand}</td>
             <td>{decodeTableRow.instruction}</td>

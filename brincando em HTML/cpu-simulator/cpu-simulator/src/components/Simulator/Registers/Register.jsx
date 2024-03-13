@@ -1,17 +1,13 @@
 import React from "react";
 
-import Input from "./Input";
-
 import "./styles.scss"
 
-const Register = ({ name, value, updateValue }) => {
+const Register = ({ name, value }) => {
   return (
     <>
     <div className={`register-container ${name}`}>
-      <h2>{name}</h2>
-      <div className="input-field">
-        <Input name={name} value={value} updateValue={updateValue}/>
-      </div>
+      <h2 className="register-name">{name}</h2>
+      <span className="register-value">{value}</span>
     </div>
     </>
   );

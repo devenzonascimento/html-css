@@ -5,17 +5,14 @@ import "./styles.scss";
 
 const Ram = ({ memory, onAtualizarMemory }) => {
 
-  const [memoryEditavel, setMemoryEditavel] = useState({ ...memory });
+  const [memoryEditavel, setMemoryEditavel] = useState(memory);
 
   const handleEditar = (endereco, novoValor) => {
-    const novaMemory = { ...memoryEditavel };
+    const novaMemory = memoryEditavel;
     novaMemory[endereco] = novoValor;
 
-    //console.log(novaMemory)
-    //console.log(memoryEditavel)
-
     setMemoryEditavel(novaMemory);
-    onAtualizarMemory({ ...memoryEditavel });
+    onAtualizarMemory(memoryEditavel);
   };
 
   return (
