@@ -28,14 +28,14 @@ export let operand = "";
 
 export const executeNextStep = () => {
     if (currentStep < main.length) {
-        //console.log(main[currentStep])
+        console.log(main[currentStep])
         main[currentStep]();
         currentStep++
     }
 };
 
 export const search = [
-    () => (pc = toBinary(count)),
+    () => (pc = count <= 15 ? toBinary(count): instructionExecute(endInstruction)),
     () => (mar = pc),
     () => (mdr = memory[mar]),
     () => (cir = mdr),
@@ -53,12 +53,11 @@ export function decode(cir) {
 
     switch (opcode) {
         case "0000":
-            return false;
-
+            instructionExecute(endInstruction);
+            break;
         case "0001":
             instructionExecute(addInstruction);
             break;
-
         case "0010":
             instructionExecute(subInstruction);
             break;
@@ -67,6 +66,17 @@ export function decode(cir) {
             break;
         case "0101":
             instructionExecute(loadInstruction);
+            break;
+        case "0110":
+            instructionExecute(jmpInstruction)
+            break;
+        case "0111":
+            if (acc == "00000000") instructionExecute(jmpInstruction)
+            else instructionExecute(search)
+            break;
+        case "1000":
+            if (acc != "00000000") instructionExecute(jmpInstruction)
+            else instructionExecute(search)
             break;
         case "1001":
             operand === "0001" ? instructionExecute(inputInstruction) : false;
@@ -113,6 +123,29 @@ export const outputInstruction = [
     () => alert(toDecimal(acc)),
     () => instructionExecute(search),
 ];
+
+export const endInstruction = [
+    () => alert("Fim do Programa"),
+    () => clearCPU(),
+    () => instructionExecute(search),
+];
+
+export const jmpInstruction = [
+    () => (count = toDecimal(operand.padStart(8, "0"))),
+    () => instructionExecute(search),
+];
+
+export function clearCPU() {
+pc = "00000000"
+mar = "00000000"
+mdr = "00000000"
+acc = "00000000"
+cir = "00000000"
+count = 0;
+currentStep = 0;
+opcode = "";
+operand = "";
+}
 
 export function toBinary(num) {
     return Number(num).toString(2).padStart(8, "0");

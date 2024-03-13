@@ -1,9 +1,11 @@
 import React from "react";
 
-import DecodeUnit from "./components/Simulator/DecodeUnit/DecodeUnit";
-import Ram from "./components/Simulator/Ram/Ram";
-import Alu from "./components/Simulator/Registers/Alu";
-import Register from "./components/Simulator/Registers/Register";
+import DecodeUnit from "./DecodeUnit/DecodeUnit";
+import Ram from "./Ram/Ram";
+import Alu from "./Registers/Alu";
+import Register from "./Registers/Register";
+
+import "./styles.scss"
 
 const Simulator = ({
   memoryValue,
@@ -14,6 +16,7 @@ const Simulator = ({
   cirValue,
   UpdateMemory,
 }) => {
+
   return (
     <div className="simulator-container">
       <Ram memory={memoryValue} onAtualizarMemory={UpdateMemory} />

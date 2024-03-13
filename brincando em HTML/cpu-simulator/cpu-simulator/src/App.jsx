@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-import DecodeUnit from "./components/Simulator/DecodeUnit/DecodeUnit";
-import Ram from "./components/Simulator/Ram/Ram";
 import Settings from "./components/Settings/Settings";
 import DebugWindow from "./components/DebugWindow/DebugWindow";
-import Alu from "./components/Simulator/Registers/Alu";
-import Register from "./components/Simulator/Registers/Register";
+import Simulator from "./components/Simulator/Simulator";
+
 
 import * as Cpu from "./script/cpuScript"
 
@@ -36,35 +34,15 @@ const App = () => {
       <div className="container">
         <Settings />
         <DebugWindow updateValues={updateValues} executeNextStep={Cpu.executeNextStep} />
-        <div className="simulator-container">
-          <Ram memory={memoryValue} onAtualizarMemory={handleUpdateMemory} />
-          <div className="registers-container">
-            <Register
-              name={"pc"}
-              value={pcValue}
-            />
-            <Register
-              name={"mar"}
-              value={marValue}
-            />
-              <Register
-                name={"mdr"}
-                value={mdrValue}
-              />
-              <Alu />
-            <Register
-              name={"acc"}
-              value={accValue}
-            />
-          </div>
-          <div className="decode-cir-container">
-            <Register
-              name={"cir"}
-              value={cirValue}
-            />
-            <DecodeUnit />
-          </div>
-        </div>
+        <Simulator
+        memoryValue = {memoryValue}
+        pcValue = {pcValue}
+        marValue = {marValue}
+        mdrValue = {mdrValue}
+        accValue = {accValue}
+        cirValue = {cirValue}
+        UpdateMemory  = {handleUpdateMemory}
+        />
       </div>
   );
 };

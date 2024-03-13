@@ -1,3 +1,4 @@
+import { pc } from "../../script/cpuScript";
 
 let memory = {
   "00000000": "10010001",
@@ -66,6 +67,9 @@ function decode(cirValue) {
       case "0101":
           instructionExecute(loadInstruction)
           break;
+      case "0110":
+          instructionExecute(jmpInstruction)
+          break;
       case "1001":
           operand === "0001" ? instructionExecute(inputInstruction) : false
           operand === "0010" ? instructionExecute(outputInstruction) : false
@@ -112,6 +116,10 @@ const outputInstruction = [
   () => instructionExecute(search)
 ]
 
+const jmpInstruction = [
+  () => pc = toBinary(prompt("Informe um valor")),
+  () => instructionExecute(search)
+]
 
 function toBinary(num) {
   return Number(num).toString(2).padStart(8, '0')

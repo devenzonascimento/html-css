@@ -34,17 +34,17 @@ const DecodeUnit = () => {
     {
       opcode: "0110",
       operand: "adress",
-      instruction: "Always",
+      instruction: "Jump",
     },
     {
       opcode: "0111",
       operand: "adress",
-      instruction: "if ACC = 0",
+      instruction: "Jump on zero",
     },
     {
       opcode: "1000",
       operand: "adress",
-      instruction: "if ACC >= 0",
+      instruction: "Jump on not zero",
     },
     {
       opcode: "1001",
@@ -52,8 +52,8 @@ const DecodeUnit = () => {
       instruction: "Input",
     },
     {
-      opcode: "0010",
-      operand: "adress",
+      opcode: "1001",
+      operand: "0010",
       instruction: "Output",
     },
   ];
