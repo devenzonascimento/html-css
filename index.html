@@ -15,7 +15,9 @@
   </head>
   <body>
     <!-- Container para exibir o feed de vídeo da câmera -->
-    <div id="scanner-container"></div>
+    <div id="scanner-container">
+
+    </div>
 
     <div>
         7891000061190
@@ -64,13 +66,14 @@
           console.log("Código de barras detectado:", result.codeResult.code);
           // Aqui você pode fazer o que quiser com o código de barras detectado
           apiNutri(result.codeResult.code)
+          Quagga.stop();
         });
       })
       .catch(function (error) {
-        console.error("Erro ao acessar a câmera:", error);
+        //console.error("Erro ao acessar a câmera:", error);
 
         // Exibe uma mensagem de erro para o usuário
-        alert("Erro ao acessar a câmera: " + error.message);
+        //alert("Erro ao acessar a câmera: " + error.message);
       });
       
 
