@@ -78,6 +78,7 @@
           console.log("Código de barras detectado:", result.codeResult.code);
           // Aqui você pode fazer o que quiser com o código de barras detectado
           if (result.codeResult.code != "") {
+            document.querySelector("#scanner-container").style.display = "none"
             Quagga.stop();
             apiNutri(result.codeResult.code);
           }
