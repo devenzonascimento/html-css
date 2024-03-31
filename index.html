@@ -62,7 +62,10 @@
         Quagga.onDetected(function (result) {
           console.log("Código de barras detectado:", result.codeResult.code);
           // Aqui você pode fazer o que quiser com o código de barras detectado
-          apiNutri(result.codeResult.code);
+          if (result.codeResult.code != "") {
+              Quagga.stop();
+              apiNutri(result.codeResult.code);
+          }
         });
       })
       .catch(function (error) {
@@ -72,7 +75,6 @@
       });
 
     const apiNutri = async (codigoDeBarras) => {
-      Quagga.stop();
 
       const response = await fetch(
         `https://world.openfoodfacts.org/api/v0/product/${codigoDeBarras}.json`
