@@ -6,13 +6,31 @@
     <title>Scanner de Código de Barras</title>
     <!-- Adicione o script da biblioteca QuaggaJS -->
     <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+
     <style>
-      #scanner-container {
-        height: 300px;
-        width: 100vw;
-      }
+      /* Estilo para o contêiner principal */
+    #scanner-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999; /* Garante que o scanner esteja sempre na frente de outros elementos */
+    }
+
+    /* Estilo para o vídeo da câmera */
+    video {
+      max-width: 100%;
+      max-height: 100%;
+    }
     </style>
+    
   </head>
+
   <body>
     <!-- Container para exibir o feed de vídeo da câmera -->
     <div id="scanner-container"></div>
@@ -23,6 +41,7 @@
       <button>TESTE</button>
     </div>
   </body>
+
   <script>
     // Solicita acesso à câmera do dispositivo
     navigator.mediaDevices
