@@ -66,7 +66,9 @@
           console.log("Código de barras detectado:", result.codeResult.code);
           // Aqui você pode fazer o que quiser com o código de barras detectado
           apiNutri(result.codeResult.code)
-          Quagga.stop();
+          setTimeout(() => {
+            Quagga.stop();
+          }, 1000)
         });
       })
       .catch(function (error) {
