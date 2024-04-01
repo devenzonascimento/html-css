@@ -56,8 +56,8 @@ const apiNutri = async (codigoDeBarras) => {
     createElements("Gordura", nutriments.fat);
     createElements("Fibra", nutriments.fiber);
   } else {
-    const text = document.createElement("p");
-    text.textContent = "Tabela nutricional não disponível para este produto.";
+    //const text = document.createElement("p");
+    //text.textContent = "Tabela nutricional não disponível para este produto.";
     //document.body.appendChild(text);
   }
 };
