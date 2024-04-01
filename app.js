@@ -62,7 +62,7 @@ const apiNutri = async (codigoDeBarras) => {
   }
 };
 
-document.querySelector("button").addEventListener("click", () => {
+document.querySelector(".teste").addEventListener("click", () => {
   let code = document.querySelector("input").value;
 
   apiNutri(code);
