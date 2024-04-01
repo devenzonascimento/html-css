@@ -24,15 +24,13 @@
   }
 
   .centralizador {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: transparent;
     width: 70%;
     height: 100px;
     border-radius: 20px;
     border: 3px dashed black;
-  }
-
-  /* Estilo para o vídeo da câmera */
-  video {
-    height: 100%;
-    width: 100%;
   }
