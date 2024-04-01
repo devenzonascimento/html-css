@@ -1,16 +1,6 @@
 document.querySelector("button").addEventListener("click", () => {
+    
     document.querySelector(".scanner-container").style.display = "flex";
-  // Solicita acesso à câmera do dispositivo
-  navigator.mediaDevices
-    .getUserMedia({ video: true })
-    .then(function (stream) {
-      // Exibe o feed de vídeo da câmera em um elemento HTML
-      const videoElement = document.createElement("video");
-      document.querySelector(".scanner-container").appendChild(videoElement);
-      videoElement.srcObject = stream;
-      videoElement.play();
-      F;
-
       // Configurações do scanner
       const scannerConfig = {
         inputStream: {
@@ -46,12 +36,7 @@ document.querySelector("button").addEventListener("click", () => {
         }
       });
     })
-    .catch(function (error) {
-      //console.error("Erro ao acessar a câmera:", error);
-      // Exibe uma mensagem de erro para o usuário
-      //alert("Erro ao acessar a câmera: " + error.message);
-    });
-});
+
 
 const apiNutri = async (codigoDeBarras) => {
   const response = await fetch(
