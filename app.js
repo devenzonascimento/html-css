@@ -1,5 +1,5 @@
 document.querySelector("button").addEventListener("click", () => {
-    
+
     document.querySelector(".scanner-container").style.display = "flex";
       // Configurações do scanner
       const scannerConfig = {
@@ -35,7 +35,7 @@ document.querySelector("button").addEventListener("click", () => {
           apiNutri(result.codeResult.code);
         }
       });
-    })
+})
 
 
 const apiNutri = async (codigoDeBarras) => {
@@ -58,7 +58,7 @@ const apiNutri = async (codigoDeBarras) => {
   } else {
     const text = document.createElement("p");
     text.textContent = "Tabela nutricional não disponível para este produto.";
-    document.body.appendChild(text);
+    //document.body.appendChild(text);
   }
 };
 

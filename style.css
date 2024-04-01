@@ -34,3 +34,9 @@
     border-radius: 20px;
     border: 3px dashed black;
   }
+
+  /* Estilo para o vídeo da câmera */
+  video {
+    height: 100%;
+    width: 100%;
+  }
